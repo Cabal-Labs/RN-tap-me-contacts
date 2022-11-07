@@ -1,5 +1,5 @@
 const ColorsLight = {
-  bg: '#fff',
+  bg: '#bbb',
   text: '#000',
 }
 

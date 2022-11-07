@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 interface RightContent {
-	type: string;
+	type?: string;
 	buttonText?: string;
 	onButtonPress?: Function;
 }
@@ -11,12 +11,20 @@ export default function RightContent({
 	type,
 	buttonText,
 	onButtonPress,
-}: RightContent) {
+}: RightContent): JSX.Element {
 	if (type === "button") {
 		return (
-			<TouchableOpacity onPress={() => onButtonPress}>
+			<TouchableOpacity onPress={() => onButtonPress} style={styles.container}>
 				<Text>{buttonText}</Text>
 			</TouchableOpacity>
 		);
+	} else {
+		return <></>;
 	}
 }
+const styles = StyleSheet.create({
+	container: {
+		margin: 5,
+		flex: 0,
+	},
+});

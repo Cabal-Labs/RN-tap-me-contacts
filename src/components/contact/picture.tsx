@@ -7,10 +7,10 @@ interface Picture {
 }
 export default function Picture({ picture, altPicture, _size }: Picture) {
 	const pictureSize: object = {
-		sm: 50,
-		md: 75,
-		lg: 100,
-		xl: 150,
+		sm: 30,
+		md: 50,
+		lg: 70,
+		xl: 100,
 	};
 	type ObjectKey = keyof typeof pictureSize;
 	const size = _size as ObjectKey;
