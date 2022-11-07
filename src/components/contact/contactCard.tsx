@@ -34,7 +34,7 @@ export default function Contact({
 		<View style={{ ...styles.container, backgroundColor: Colors.bg }}>
 			<View style={styles.contactContainer}>
 				<Picture {...{ picture, altPicture, _size: size }} />
-				<Text style={styles.text}>{name}</Text>
+				<Text style={{ ...styles.text }}>{name}</Text>
 			</View>
 			<RightContent {...rightContentProps} />
 		</View>
