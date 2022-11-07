@@ -1,6 +1,5 @@
-import { NativeModules } from "react-native";
 import { ContactCard, Picture } from "./components/contact";
 import TMProvider from "./styles/TMProvider";
 export { ContactCard, Picture, TMProvider };
-
-export default NativeModules.TMContactsModule;
+declare const _default: any;
+export default _default;
