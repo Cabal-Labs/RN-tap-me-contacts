@@ -6,49 +6,43 @@ import {
   useColorScheme,
   View,
 } from 'react-native'
-import TMContactsModule, { ContactCard, TMProvider } from 'rn-tap-me-contacts'
+import TMContactsModule, {
+  ContactCard,
+  ContactList,
+  TMProvider,
+} from 'rn-tap-me-contacts'
 import theme from './styles/theme'
 const App = () => {
   const ColorScheme = useColorScheme()
-  const users = [
-    {
-      picture: `https://xsgames.co/randomusers/avatar.php?g=${
-        Math.random() < 0.5 ? 'male' : 'female'
-      }`,
-      altPicture: 'https://xsgames.co/randomusers/avatar.php?g=pixel',
-      name: 'Jordan A',
-      // size: 'lg',
-    },
-    {
-      picture: `https://xsgames.co/randomusers/avatar.php?g=${
-        Math.random() < 0.5 ? 'male' : 'female'
-      }`,
-      altPicture: 'https://xsgames.co/randomusers/avatar.php?g=pixel',
-      name: 'Jordan A',
-    },
-    {
-      picture: `https://xsgames.co/randomusers/avatar.php?g=${
-        Math.random() < 0.5 ? 'male' : 'female'
-      }`,
-      altPicture: 'https://xsgames.co/randomusers/avatar.php?g=pixel',
-      name: 'Jordan A',
-      // size: 'sm',
-    },
-  ]
+
   const containerStyle = {
     paddingTop: 50,
     paddingHorizontal: 5,
   }
-  function handleButtonPress() {
-    console.log('Pressed')
-  }
+  const actions = [
+    {
+      text: 'Say Hello',
+      action: () => console.log('hello'),
+      method: 'custom',
+    },
+    {
+      text: 'Say bye',
+      action: () => console.log('bye'),
+      method: 'custom',
+    },
+  ]
   return (
     <TMProvider theme={theme}>
       <View style={containerStyle}>
         <TouchableOpacity>
           <Text>Toggle Theme</Text>
         </TouchableOpacity>
-        {users.map((item) => {
+        <ContactList
+          walletAddress='hello'
+          actionStyle='drop-down'
+          actions={actions}
+        />
+        {/* {users.map((item) => {
           return (
             <ContactCard
               {...item}
@@ -57,7 +51,7 @@ const App = () => {
               onButtonPress={handleButtonPress}
             />
           )
-        })}
+        })} */}
       </View>
     </TMProvider>
   )

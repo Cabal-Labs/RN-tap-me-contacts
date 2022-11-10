@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { useTheme } from "../../styles/TMProvider";
+import { Action } from "../../types";
 import Picture from "./picture";
 import RightContent from "./rightContent";
 
@@ -8,26 +9,21 @@ interface Contact {
 	picture: string;
 	altPicture?: string;
 	name: string;
-	metadata?: object;
 	size?: string;
-	rightContent?: string;
-	buttonText?: string;
-	onButtonPress?: Function;
+	actionStyle?: string;
+	actions?: Array<Action>;
 }
 export default function Contact({
 	picture,
 	altPicture,
 	name,
-	metadata,
 	size = "md",
-	rightContent,
-	buttonText,
-	onButtonPress,
+	actionStyle,
+	actions,
 }: Contact): JSX.Element {
 	const rightContentProps = {
-		type: rightContent,
-		buttonText,
-		onButtonPress,
+		actionStyle,
+		actions,
 	};
 	const { Colors } = useTheme();
 	return (

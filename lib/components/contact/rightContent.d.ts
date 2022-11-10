@@ -1,8 +1,8 @@
 /// <reference types="react" />
+import { Action } from "../../types";
 interface RightContent {
-    type?: string;
-    buttonText?: string;
-    onButtonPress?: Function;
+    actionStyle?: string;
+    actions?: Array<Action>;
 }
-export default function RightContent({ type, buttonText, onButtonPress, }: RightContent): JSX.Element;
+export default function RightContent({ actionStyle, actions, }: RightContent): JSX.Element;
 export {};

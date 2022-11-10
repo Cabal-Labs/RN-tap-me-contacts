@@ -4,7 +4,7 @@ const ColorsDark = {
 	bg: "#000",
 };
 const ColorsLight = {
-	bg: "#000",
+	bg: "#eee",
 };
 interface TMProvider {
 	theme: object;

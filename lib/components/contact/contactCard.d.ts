@@ -1,13 +1,12 @@
 /// <reference types="react" />
+import { Action } from "../../types";
 interface Contact {
     picture: string;
     altPicture?: string;
     name: string;
-    metadata?: object;
     size?: string;
-    rightContent?: string;
-    buttonText?: string;
-    onButtonPress?: Function;
+    actionStyle?: string;
+    actions?: Array<Action>;
 }
-export default function Contact({ picture, altPicture, name, metadata, size, rightContent, buttonText, onButtonPress, }: Contact): JSX.Element;
+export default function Contact({ picture, altPicture, name, size, actionStyle, actions, }: Contact): JSX.Element;
 export {};
