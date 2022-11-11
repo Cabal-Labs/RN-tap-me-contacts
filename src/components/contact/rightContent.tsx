@@ -27,16 +27,32 @@ export default function RightContent({
 						{actions?.map((item: Action) => {
 							return (
 								<Button
-									text={item.text}
 									onPress={() => {
 										item.action;
 										setDropDownOpen(!dropDownOpen);
-									}}
-								/>
+									}}>
+									{item.text}
+								</Button>
 							);
 						})}
 					</View>
 				) : null}
+			</View>
+		);
+	} else if (actionStyle === "right") {
+		return (
+			<View style={{ ...styles.row }}>
+				{actions?.map((item: Action) => {
+					return (
+						<Button
+							onPress={() => {
+								item.action;
+								setDropDownOpen(!dropDownOpen);
+							}}>
+							{item.text}
+						</Button>
+					);
+				})}
 			</View>
 		);
 	} else {
@@ -54,6 +70,15 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		backgroundColor: "#eee",
 		zIndex: 100,
-		transform: [{ translateY: 100 }],
+		paddingVertical: 5,
+		paddingHorizontal: 10,
+		width: 200,
+		transform: [{ translateY: 50 }],
+	},
+	row: {
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "flex-end",
+		alignItems: "center",
 	},
 });

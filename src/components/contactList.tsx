@@ -32,6 +32,7 @@ export default function ContactList({
 			}`,
 			altPicture: "https://xsgames.co/randomusers/avatar.php?g=pixel",
 			name: "Jordan A",
+			address: "123456789",
 			// size: 'lg',
 		},
 		{
@@ -40,6 +41,7 @@ export default function ContactList({
 			}`,
 			altPicture: "https://xsgames.co/randomusers/avatar.php?g=pixel",
 			name: "Jordan A",
+			address: "123456789",
 		},
 		{
 			picture: `https://xsgames.co/randomusers/avatar.php?g=${
@@ -47,6 +49,7 @@ export default function ContactList({
 			}`,
 			altPicture: "https://xsgames.co/randomusers/avatar.php?g=pixel",
 			name: "Jordan A",
+			address: "123456789",
 			// size: 'sm',
 		},
 	];

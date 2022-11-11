@@ -39,19 +39,9 @@ const App = () => {
         </TouchableOpacity>
         <ContactList
           walletAddress='hello'
-          actionStyle='drop-down'
+          actionStyle='right'
           actions={actions}
         />
-        {/* {users.map((item) => {
-          return (
-            <ContactCard
-              {...item}
-              rightContent={'button'}
-              buttonText={`Invite ${item.name}`}
-              onButtonPress={handleButtonPress}
-            />
-          )
-        })} */}
       </View>
     </TMProvider>
   )

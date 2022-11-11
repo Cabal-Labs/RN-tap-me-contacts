@@ -1,11 +1,13 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useTheme } from "../../styles/TMProvider";
 import { Action } from "../../types";
+import ContactModal from "./contactModal";
 import Picture from "./picture";
 import RightContent from "./rightContent";
 
 interface Contact {
+	address: string;
 	picture: string;
 	altPicture?: string;
 	name: string;
@@ -14,6 +16,7 @@ interface Contact {
 	actions?: Array<Action>;
 }
 export default function Contact({
+	address,
 	picture,
 	altPicture,
 	name,
@@ -21,19 +24,30 @@ export default function Contact({
 	actionStyle,
 	actions,
 }: Contact): JSX.Element {
+	const [isOpen, setIsOpen] = useState(false);
 	const rightContentProps = {
 		actionStyle,
 		actions,
 	};
+	const modalProps = {
+		address,
+		isOpen,
+		setIsOpen,
+	};
 	const { Colors } = useTheme();
 	return (
-		<View style={{ ...styles.container, backgroundColor: Colors.bg }}>
-			<View style={styles.contactContainer}>
-				<Picture {...{ picture, altPicture, _size: size }} />
-				<Text style={{ ...styles.text }}>{name}</Text>
+		<>
+			<View style={{ ...styles.container, backgroundColor: Colors.bg }}>
+				<TouchableOpacity
+					style={styles.contactContainer}
+					onPress={() => setIsOpen(!isOpen)}>
+					<Picture {...{ picture, altPicture, _size: size }} />
+					<Text style={{ ...styles.text }}>{name}</Text>
+				</TouchableOpacity>
+				<RightContent {...rightContentProps} />
 			</View>
-			<RightContent {...rightContentProps} />
-		</View>
+			<ContactModal {...modalProps} />
+		</>
 	);
 }
 const styles = StyleSheet.create({
