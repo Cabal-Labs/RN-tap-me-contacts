@@ -4,7 +4,7 @@ interface Button {
     onPress: Function;
     iconLeft?: JSX.Element;
     iconRight?: JSX.Element;
-    variant?: "contained" | "outlined" | "ghost";
+    variant?: string;
 }
 export default function Button({ children, onPress, iconLeft, iconRight, variant, }: Button): JSX.Element;
 export {};

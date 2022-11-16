@@ -22,13 +22,15 @@ const App = () => {
   const actions = [
     {
       text: 'Say Hello',
-      action: () => console.log('hello'),
       method: 'custom',
+      action: () => console.log('hello'),
+      variant: 'contained',
     },
     {
       text: 'Say bye',
-      action: () => console.log('bye'),
       method: 'custom',
+      action: () => console.log('bye'),
+      variant: 'outlined',
     },
   ]
   return (

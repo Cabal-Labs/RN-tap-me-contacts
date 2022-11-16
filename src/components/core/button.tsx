@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useTheme } from "../../styles/TMProvider";
 
 interface Button {
 	children: string;
 	onPress: Function;
 	iconLeft?: JSX.Element;
 	iconRight?: JSX.Element;
-	variant?: "contained" | "outlined" | "ghost";
+	variant?: string;
 }
 export default function Button({
 	children,
@@ -15,10 +16,14 @@ export default function Button({
 	iconRight,
 	variant,
 }: Button) {
+	const { Colors } = useTheme();
 	return (
-		<TouchableOpacity onPress={() => onPress} style={styles.button}>
+		<TouchableOpacity
+			onPress={() => onPress}
+			style={{ ...styles.button, backgroundColor: Colors.primary }}>
 			{iconLeft ? <>{iconLeft}</> : null}
-			<Text>{children}</Text>
+			<Text style={{ color: Colors.text }}>{variant}</Text>
+			<Text style={{ color: Colors.text }}>{children}</Text>
 			{iconRight ? <>{iconRight}</> : null}
 		</TouchableOpacity>
 	);
@@ -30,6 +35,5 @@ const styles = StyleSheet.create({
 		marginHorizontal: 2.5,
 		marginVertical: 2.5,
 		borderRadius: 2.5,
-		backgroundColor: "pink",
 	},
 });

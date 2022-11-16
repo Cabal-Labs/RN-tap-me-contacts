@@ -45,6 +45,7 @@ export default function RightContent({
 				{actions?.map((item: Action) => {
 					return (
 						<Button
+							variant={item.variant}
 							onPress={() => {
 								item.action;
 								setDropDownOpen(!dropDownOpen);
