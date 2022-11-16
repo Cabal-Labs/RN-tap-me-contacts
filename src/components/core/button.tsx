@@ -22,7 +22,6 @@ export default function Button({
 			onPress={() => onPress}
 			style={{ ...styles.button, backgroundColor: Colors.primary }}>
 			{iconLeft ? <>{iconLeft}</> : null}
-			<Text style={{ color: Colors.text }}>{variant}</Text>
 			<Text style={{ color: Colors.text }}>{children}</Text>
 			{iconRight ? <>{iconRight}</> : null}
 		</TouchableOpacity>

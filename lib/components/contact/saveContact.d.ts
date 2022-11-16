@@ -1,9 +1,9 @@
 /// <reference types="react" />
-interface ContactModal {
+interface SaveContact {
     address: string;
     isOpen: boolean;
     setIsOpen: Function;
     name?: string;
 }
-export default function ContactModal({ address, isOpen, setIsOpen, name, }: ContactModal): JSX.Element;
+export default function SaveContact({ address, isOpen, setIsOpen, name, }: SaveContact): JSX.Element;
 export {};

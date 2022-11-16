@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useTheme } from "../../styles/TMProvider";
 import { Action } from "../../types";
-import ContactModal from "./contactModal";
 import Picture from "./picture";
 import RightContent from "./rightContent";
+import SaveContact from "./saveContact";
 
 interface Contact {
 	address: string;
@@ -46,7 +46,7 @@ export default function Contact({
 				</TouchableOpacity>
 				<RightContent {...rightContentProps} />
 			</View>
-			<ContactModal {...modalProps} />
+			<SaveContact {...modalProps} />
 		</>
 	);
 }

@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { Text, Modal, TouchableOpacity, StyleSheet, View } from "react-native";
 import Button from "../core/button";
 
-interface ContactModal {
+interface SaveContact {
 	address: string;
 	isOpen: boolean;
 	setIsOpen: Function;
 	name?: string;
 }
 
-export default function ContactModal({
+export default function SaveContact({
 	address,
 	isOpen,
 	setIsOpen,
 	name,
-}: ContactModal) {
+}: SaveContact) {
 	return (
 		<>
 			<Modal visible={isOpen} style={styles.modal} transparent>
